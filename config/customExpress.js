@@ -5,7 +5,9 @@ const bodyParser = require('body-parser');
 module.exports  = () => {
 
     const app = express();
-
+    
+    app.use(bodyParser.urlencoded({urlencoded: true}))
+    app.use(bodyParser.json())
     consign()
         .include('controllers')
         .into(app);
